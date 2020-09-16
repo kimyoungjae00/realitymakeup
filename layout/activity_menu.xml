@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:itemTextColor="@color/colorPrimary"
+        app:itemIconTint="@color/colorPrimary"
+        app:menu="@menu/drawer_menu"
+        android:layout_gravity="start">
+    </android.support.design.widget.NavigationView>
+
+    <LinearLayout
+        android:id="@+id/menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cam_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/photo_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:padding="6dp"
+                android:src="@drawable/icon_photo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/camera_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="6dp"
+                android:src="@drawable/icon_camera"
+                android:visibility="gone" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/gradients3">
+
+            <Button
+                android:id="@+id/process_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="현재 메이크업으로 시작하기"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/info_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="6dp"
+                android:src="@drawable/icon_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.973"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
+        android:background="@drawable/gradients3"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/white"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/tabTextColor" />
+
+        <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="#FFF" />
+
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>
